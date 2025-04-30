@@ -35,7 +35,7 @@ GENRE_EMOJIS = {
 
 # Удаляет эмодзи из строки (используется для "очистки" жанров перед запросом)
 def remove_emoji(text):
-    return emoji.replace_emoji(text, replace='')
+    return emoji.replace_emoji(text, replace='').strip()
 
 # Простая "эмуляция" очистки экрана — печать множества пустых строк
 def fake_clear():
@@ -191,9 +191,11 @@ def search_by_genre_and_year():
         return
 
     selected_genre = selected.strip()
+
     save_search_query(selected_genre, query_type='genre')
 
     genre_results = search_movies_by_genre(selected_genre)
+
     if not genre_results:
         console.print(f"[bold red]Фильмы с жанром '{selected_genre}' не найдены.[/bold red]")
         return

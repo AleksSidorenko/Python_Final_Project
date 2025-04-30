@@ -1,7 +1,8 @@
 # config.py
 
 import os
-
+from dotenv import load_dotenv
+load_dotenv()
 
 # Конфигурация подключения к базам данных
 

@@ -6,8 +6,31 @@ from rich.console import Console
 console = Console()
 
 def connect_db(config):
-    """Устанавливает соединение с базой данных по переданной конфигурации"""
-    connection = mysql.connector.connect(**config)
+    """
+    Устанавливает соединение с базой данных по переданной конфигурации.
+
+    Возвращает объект соединения, если подключение успешно,
+    либо None, если подключение не удалось.
+    """
+    connection = None
+    try:
+        # Попытка установить соединение с базой данных
+        connection = mysql.connector.connect(**config)
+
+        # Проверка, что соединение установлено
+        if connection.is_connected():
+            print("Успешное подключение к базе данных.")
+            return connection
+        else:
+            print("Не удалось подключиться к базе данных.")
+            return None
+
+    except Error as e:
+        # Обработка ошибки соединения
+        print(f"Ошибка при подключении к базе данных: {e}")
+        return None
+
+    # Возвращаем None, если произошла ошибка или соединение не установлено
     return connection
 
 
