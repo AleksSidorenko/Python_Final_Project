@@ -19,18 +19,3 @@ def main():
 if __name__ == "__main__":
     welcome_sequence()  # Показ приветственного логотипа при запуске
     main()              # Запуск главного меню
-
-
-
-
-# import menu
-# from logo import welcome_sequence
-#
-#
-# def main():
-#     """Запуск главного меню"""
-#     menu.navigate_menu()
-#
-# if __name__ == "__main__":
-#     welcome_sequence()  # Показ логотипа при запуске
-#     main()
