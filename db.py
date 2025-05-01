@@ -19,7 +19,7 @@ def connect_db(config):
 
         # Проверка, что соединение установлено
         if connection.is_connected():
-            print("Успешное подключение к базе данных.")
+            # print("Успешное подключение к базе данных.")
             return connection
         else:
             print("Не удалось подключиться к базе данных.")
