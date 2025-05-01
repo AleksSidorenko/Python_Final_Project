@@ -155,8 +155,11 @@ def search_by_keyword():
             keyword = questionary.select("Выберите слово из списка:", choices=genres, qmark="").ask()
         else:
             keyword = questionary.text("Введите ключевое слово:", qmark="").ask()
-            if not keyword:
+
+            if not keyword or not keyword.strip():
+                console.print("[bold red]❗ Пустой запрос. Повторите попытку.[/bold red]")
                 continue
+
             keyword = keyword.strip()
 
         save_search_query(keyword, query_type="keyword")
@@ -228,6 +231,7 @@ def search_by_genre_and_year():
             if year < min_year or year > max_year:
                 console.print(f"[bold red]Год должен быть в пределах от {min_year} до {max_year}.[/bold red]")
                 continue
+
             results = fetch_movies_by_genre_and_year(selected_genre, year)
             keyword_label = f"{selected_genre} ({year})"
         else:
