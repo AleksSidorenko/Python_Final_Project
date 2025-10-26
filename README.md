@@ -1,74 +1,82 @@
-
 # ITCinema CLI 🎬
 
-**ITCinema** — консольное Python-приложение для поиска фильмов в базах данных (MySQL), 
-где хранятся фильмы и статистика пользовательских запросов. 
-Пользователь может искать фильмы по ключевым словам, жанру и году, 
-а также просматривать популярные запросы. 
-Все действия логируются в отдельную БД.
+**ITCinema** — ein Konsolenprogramm in Python zur Filmsuche in Datenbanken (MySQL),
+in denen Filme und Statistiken zu Benutzeranfragen gespeichert sind.
+Der Benutzer kann Filme nach **Schlüsselwörtern**, **Genre** und **Jahr** suchen
+und außerdem die beliebtesten Suchanfragen anzeigen.
+Alle Aktionen werden in einer separaten Datenbank protokolliert.
 
-## 📌 Цель проекта
+## 📌 Ziel des Projekts
 
-Предоставить удобный способ взаимодействия с базой фильмов через терминал: 
-выполнять поиск по жанрам, ключевым словам, отслеживать популярные запросы и 
-просматривать подробную информацию о фильмах.
+Bereitstellung einer benutzerfreundlichen Möglichkeit, über das Terminal
+mit der Filmdatenbank zu interagieren:
+Suche nach Genres und Schlüsselwörtern, Nachverfolgung beliebter Suchanfragen
+und Anzeige detaillierter Informationen zu Filmen.
 
-## 🛠️ Установка
+## 🛠️ Installation
 
-### Требования
+### Anforderungen
 
-- Python 3.8+
-- Установленный MySQL-сервер
-- Существующая база данных с таблицами фильмов и запросов
+* Python 3.8+
+* Installierter MySQL-Server
+* Vorhandene Datenbank mit Tabellen für Filme und Suchanfragen
 
-### Установка зависимостей
+### Installation der Abhängigkeiten
 
 ```bash
 pip3 install -r requirements.txt
 ```
 
-## ⚙️ Конфигурация
+## ⚙️ Konfiguration
 
-Файл `config.py` содержит правильные настройки подключения к MySQL.
+Die Datei `config.py` enthält die richtigen Einstellungen
+für die Verbindung zu MySQL.
 
-## 🚀 Запуск приложения
+## 🚀 Start der Anwendung
+
+```bash
+python3 app.py
+```
+
+## 🧭 Hauptfunktionen
+
+* 🔎 Filmsuche nach Schlüsselwörtern (mit Anzeige beliebter Suchanfragen)
+* 🎭 Filmsuche nach Genre und Jahr oder Jahresbereich
+* 📊 Anzeige der Top-5 der beliebtesten Suchanfragen und Genres
+* 📋 Seitliche Ausgabe der Ergebnisse
+* 📝 Anzeige detaillierter Filminformationen
+
+## 💻 Beispielverwendung
 
 ```bash
 python3 app.py
 ```
 
-## 🧭 Основные функции
+Willkommen bei ITCinema CLI!
 
-- 🔎 Поиск фильмов по ключевым словам (с отображением популярных запросов)
-- 🎭 Поиск фильмов по жанру и году или диапазону лет
-- 📊 Просмотр топ-5 популярных запросов и жанров
-- 📋 Постраничный вывод результатов
-- 📝 Просмотр подробной информации о фильмах
+> Wählen Sie eine Aktion:
 
-## 💻 Пример использования
-
-```bash
-python3 app.py
-```
-Добро пожаловать в ITCinema CLI!
-> Выберите действие:
-  - Поиск по ключевому слову
-  - Поиск по жанру и году
-  - Топ популярных запросов
-  - Выход
-```
-
-## 📁 Структура проекта
+* Suche nach Schlüsselwort
+* Suche nach Genre und Jahr
+* Top beliebte Suchanfragen
+* Beenden
 
 ```
-├── app.py                 # Точка входа в приложение
-├── config.py              # Конфигурация подключения к MySQL
-├── db.py                  # Функции работы с базой данных
-├── logic.py               # Основная логика поиска и отображения
-├── menu.py                # Меню навигации
-├── logo.py                # Логотип
-├── requirements.txt       # Зависимости
-└── README.md              # Этот файл
+
+## 📁 Projektstruktur
+
 ```
-Автор:
+
+├── app.py                 # Einstiegspunkt der Anwendung
+├── config.py              # MySQL-Verbindungskonfiguration
+├── db.py                  # Datenbankfunktionen
+├── logic.py               # Hauptlogik für Suche und Anzeige
+├── menu.py                # Navigationsmenü
+├── logo.py                # Logo
+├── requirements.txt       # Abhängigkeiten
+└── README.md              # Diese Datei
+
+```
+
+**Autor:**  
 Alex Sidorenko
